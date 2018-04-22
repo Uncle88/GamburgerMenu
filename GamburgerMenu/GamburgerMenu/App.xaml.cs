@@ -1,14 +1,34 @@
-﻿using Xamarin.Forms;
+﻿using GamburgerMenu.Views;
+using Xamarin.Forms;
 
 namespace GamburgerMenu
 {
     public partial class App : Application
     {
-        public App()
+        public static NavigationPage NavigationPage { get; private set; }
+        private static RootPage RootPage;
+		public static bool MenuIsPresented
+        {
+            get
+            {
+                return RootPage.IsPresented;
+            }
+            set
+            {
+                RootPage.IsPresented = value;
+            }
+        }
+
+		public App()
         {
             InitializeComponent();
+            var menuPage = new MenuPage();
+            NavigationPage = new NavigationPage(new HomePage());
 
-            //MainPage = new GamburgerMenuPage();
+            RootPage = new RootPage();
+            RootPage.Master = menuPage;
+            RootPage.Detail = NavigationPage;
+            MainPage = RootPage;
         }
 
         protected override void OnStart()
