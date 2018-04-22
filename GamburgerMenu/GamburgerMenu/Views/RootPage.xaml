@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" 
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                  xmlns:local="clr-namespace:GamburgerMenu" 
+                  x:Class="GamburgerMenu.Views.RootPage">
+    <MasterDetailPage.Master>
+    <ContentPage Title="Master"/>
+  </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+
+<NavigationPage>
+  <x:Arguments >
+    <ContentPage Title="This is a view"></ContentPage>
+  </x:Arguments>
+</NavigationPage>
+</MasterDetailPage.Detail>
+    
+</MasterDetailPage>
